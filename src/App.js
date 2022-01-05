@@ -1,70 +1,43 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 import Menu from "./components/menu/Menu";
 import LeftSidebar from "./components/leftSidebar/LeftSidebar";
 import ChatSection from "./components/chatSection/ChatSection";
-import {DialogContext} from "./context";
-import jQuery from "jquery";
+import {DialogContext, AuthContext} from "./context";
 
-const $ = jQuery;
-window.jQuery = $;
-// window.$ = $;
-// global.jQuery = $;
+import RouterApp from "./components/RouterApp";
+import {BrowserRouter} from "react-router-dom";
 
 function App() {
 
+  const [isAuth, setIsAuth] = useState(false)
+  const [isLoading, setLoading] = useState(true)
   const [currentDialog, setCurrentDialog] = useState({})
 
-  $(document).ready(function () {
-    // $(".popup-img").magnificPopup({
-    //   type: "image",
-    //   closeOnContentClick: !0,
-    //   mainClass: "mfp-img-mobile",
-    //   image: {verticalFit: !0}
-    // });
 
-    $("#user-status-carousel").owlCarousel({
-      items: 4,
-      loop: !1,
-      margin: 16,
-      nav: !1,
-      dots: !1
-    });
-
-    $("#user-profile-hide").click(function () {
-      $(".user-profile-sidebar").hide()
-    });
-
-    $(".user-profile-show").click(function () {
-      $(".user-profile-sidebar").show()
-    });
-
-    $(".chat-user-list li a").click(function () {
-      $(".user-chat").addClass("user-chat-show")
-    });
-
-    $(".user-chat-remove").click(function () {
-      $(".user-chat").removeClass("user-chat-show")
-    });
-  });
+  useEffect(() => {
+    if (localStorage.getItem('auth')) {
+      setIsAuth(true)
+    }
+    setLoading(false)
+  }, [])
 
 
   return (
-    <DialogContext.Provider value={{
-      currentDialog,
-      setCurrentDialog
+    <AuthContext.Provider value={{
+      isAuth,
+      setIsAuth,
+      isLoading
     }}>
-      <div className="layout-wrapper d-lg-flex">
-
-        <Menu/>
-        <LeftSidebar/>
-
-        <ChatSection/>
-
-      </div>
-    </DialogContext.Provider>
-
-
+      <DialogContext.Provider value={{
+        currentDialog,
+        setCurrentDialog
+      }}>
+        <BrowserRouter>
+          <RouterApp/>
+        </BrowserRouter>
+      </DialogContext.Provider>
+    </AuthContext.Provider>
   );
 }
 

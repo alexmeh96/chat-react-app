@@ -1,14 +1,12 @@
 import React, {useState} from 'react';
 
 const InputSection = () => {
-
   const [newMessage, setNewMessage] = useState("")
 
   const sendMessage = () => {
     console.log(newMessage)
     setNewMessage("")
   }
-
 
   return (
     <div className="p-3 p-lg-4 border-top mb-0">
@@ -53,7 +51,6 @@ const InputSection = () => {
               </li>
             </ul>
           </div>
-
         </div>
       </div>
     </div>

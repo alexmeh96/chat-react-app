@@ -1,8 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import logo from "../../static/picture/logo.svg";
 import {currentUser} from "../../data";
+import {AuthContext} from "../../context";
 
 const Menu = () => {
+
+  const {isAuth, setIsAuth} = useContext(AuthContext)
+
+  const logout = () => {
+    setIsAuth(false)
+    localStorage.removeItem('auth')
+  }
+
   return (
     <div className="side-menu flex-lg-column mr-lg-1">
       <div className="navbar-brand-box">
@@ -105,7 +114,7 @@ const Menu = () => {
               <a className="dropdown-item" href="#">Setting <i
                 className="ri-settings-3-line float-right text-muted"/></a>
               <div className="dropdown-divider"/>
-              <a className="dropdown-item" href="#">Log out <i
+              <a className="dropdown-item" href="#" onClick={logout}>Log out <i
                 className="ri-logout-circle-r-line float-right text-muted"/></a>
             </div>
           </li>
