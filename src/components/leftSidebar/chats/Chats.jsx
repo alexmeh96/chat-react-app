@@ -10,7 +10,7 @@ const Chats = () => {
 
         {
           chats.map(chat =>
-            <ChatItem chat={chat} active={false}/>
+            <ChatItem key={chat.id} chat={chat} />
           )
         }
 

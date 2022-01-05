@@ -1,14 +1,14 @@
 import React from 'react';
-import GroupPanel from "./GroupPanel";
 import {groups} from "../../../data";
-
+import GroupPanel from "./GroupPanel";
 
 
 const Groups = () => {
 
 
   return (
-    <div className="p-4 chat-message-list chat-group-list" data-simplebar="">
+    // <div className="p-4 chat-message-list chat-group-list" data-simplebar="">
+    <div className="p-4 chat-message-list chat-user-list" data-simplebar="">
 
 
       <ul className="list-unstyled chat-list">
@@ -23,9 +23,7 @@ const Groups = () => {
 
         {
           groups.map(group =>
-            <li>
-              <GroupPanel name={group.name} countMessages={group.countMessages}/>
-            </li>
+            <GroupPanel key={group.id} group={group} />
           )
         }
 

@@ -1,14 +1,14 @@
 import React from 'react';
-import {currentDialog} from "../../data";
 
-const ChatHeader = () => {
+const ChatHeader = ({currentDialog}) => {
+
   return (
     <div className="p-3 p-lg-4 border-bottom">
       <div className="row align-items-center">
         <div className="col-sm-4 col-8">
           <div className="media align-items-center">
             <div className="d-block d-lg-none mr-2">
-              <a href="" className="user-chat-remove text-muted font-size-16 p-2"><i
+              <a className="user-chat-remove text-muted font-size-16 p-2"><i
                 className="ri-arrow-left-s-line"/></a>
             </div>
             {
@@ -28,9 +28,13 @@ const ChatHeader = () => {
                 </div>
             }
             <div className="media-body overflow-hidden">
-              <h5 className="font-size-16 mb-0 text-truncate"><a href="#"
-                                                                 className="text-reset user-profile-show">{currentDialog.name}</a> <i
-                className="ri-record-circle-fill font-size-10 text-success d-inline-block ml-1"/></h5>
+              <h5 className="font-size-16 mb-0 text-truncate">
+                <a href="#" className="text-reset user-profile-show">{currentDialog.name}</a>
+                {
+                  currentDialog.type === 'CHAT' && currentDialog.isOnline &&
+                  <i className="ri-record-circle-fill font-size-10 text-success d-inline-block ml-1"/>
+                }
+              </h5>
             </div>
           </div>
         </div>
@@ -51,11 +55,14 @@ const ChatHeader = () => {
               </div>
             </li>
 
-            <li className="list-inline-item d-none d-lg-inline-block">
-              <button type="button" className="btn nav-btn user-profile-show">
-                <i className="ri-user-2-line"/>
-              </button>
-            </li>
+            {
+              currentDialog.type === 'CHAT' &&
+              <li className="list-inline-item d-none d-lg-inline-block">
+                <button type="button" className="btn nav-btn user-profile-show">
+                  <i className="ri-user-2-line"/>
+                </button>
+              </li>
+            }
 
             <li className="list-inline-item">
               <div className="dropdown">

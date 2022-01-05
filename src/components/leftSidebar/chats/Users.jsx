@@ -11,7 +11,7 @@ const Users = () => {
       {/*<OwlCarousel items={4} margin={16} dots={false} className="owl-theme" id="user-status-carousel">*/}
         {
           users.map(user =>
-            <UserItem user={user} />
+            <UserItem key={user.id} user={user} />
           )
         }
       </div>

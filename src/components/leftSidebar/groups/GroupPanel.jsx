@@ -1,34 +1,43 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {DialogContext} from "../../../context";
 
-const GroupPanel = ({name, countMessages}) => {
+const GroupPanel = ({group}) => {
+
+  const {currentDialog, setCurrentDialog} = useContext(DialogContext)
+
+  const chooseGroup = () => {
+    setCurrentDialog(group)
+  }
+
   return (
-    <a href="#">
-      <div className="media align-items-center">
-        <div className="chat-user-img mr-3">
-          <div className="avatar-xs">
+    <li className={`${currentDialog.id === group.id  && currentDialog.type === 'GROUP' ? "active" : ""}`}>
+      <a href="#" onClick={chooseGroup}>
+        <div className="media align-items-center">
+          <div className="chat-user-img mr-3">
+            <div className="avatar-xs">
                                                         <span
                                                           className="avatar-title rounded-circle bg-soft-primary text-primary">
-                                                          {name[0].toUpperCase()}
+                                                          {group.name[0].toUpperCase()}
                                                         </span>
+            </div>
           </div>
-        </div>
-        <div className="media-body overflow-hidden">
-          <h5 className="text-truncate font-size-14 mb-0">#{name}
+          <div className="media-body overflow-hidden">
+            <h5 className="text-truncate font-size-14 mb-0">#{group.name}
 
-              { countMessages > 1 &&
-                <span className="badge badge-soft-danger badge-pill float-right">+{countMessages}</span>
+              {group.countMessages > 1 &&
+              <span className="badge badge-soft-danger badge-pill float-right">+{group.countMessages}</span>
               }
 
-            { countMessages === 1 &&
+              {group.countMessages === 1 &&
               <span className="badge badge-soft-danger badge-pill float-right">New</span>
-            }
+              }
 
 
-
-          </h5>
+            </h5>
+          </div>
         </div>
-      </div>
-    </a>
+      </a>
+    </li>
   );
 };
 

@@ -53,14 +53,14 @@ const CreateGroup = () => {
 
                         {
                           Object.entries(myContacts).map(([key, value]) =>
-                            <div>
+                            <div key={key}>
                               <div className="p-3 font-weight-bold text-primary">
                                 {key}
                               </div>
 
                               <ul className="list-unstyled contact-list">
                                 {
-                                  value.map(contact => <ContactPanel contact={contact}/>)
+                                  value.map(contact => <ContactPanel key={contact.id} contact={contact}/>)
                                 }
                               </ul>
                             </div>

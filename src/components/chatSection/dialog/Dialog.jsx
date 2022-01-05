@@ -4,18 +4,17 @@ import {messages} from "../../../data";
 
 const Dialog = () => {
 
-  const messagesList = [[messages[0]]]
+  const messagesList = []
+  // const messagesList = [[messages[0]]]
 
-
-  for (let i = 1; i < messages.length; i++) {
-    if (messages[i].isOwn !== messages[i - 1].isOwn) {
-      messagesList.push([])
-    }
-    messagesList[messagesList.length - 1].push(messages[i])
-  }
-
-  console.log(messagesList)
-
+  // for (let i = 1; i < messages.length; i++) {
+  //   if (messages[i].isOwn !== messages[i - 1].isOwn) {
+  //     messagesList.push([])
+  //   }
+  //   messagesList[messagesList.length - 1].push(messages[i])
+  // }
+  //
+  // console.log(messagesList)
 
   return (
     <div className="chat-conversation p-3 p-lg-4" data-simplebar="init">

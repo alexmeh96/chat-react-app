@@ -1,7 +1,6 @@
 import React from 'react';
-import {chooseUser} from "../../../data";
 
-const About = () => {
+const About = ({currentDialog}) => {
   return (
     <div className="card shadow-none border mb-2">
       <a href="#collapseOne" className="text-dark" data-toggle="collapse" aria-expanded="true"
@@ -20,22 +19,22 @@ const About = () => {
 
           <div>
             <p className="text-muted mb-1">Name</p>
-            <h5 className="font-size-14">{chooseUser.name}</h5>
+            <h5 className="font-size-14">{currentDialog.name}</h5>
           </div>
 
           <div className="mt-4">
             <p className="text-muted mb-1">Email</p>
-            <h5 className="font-size-14">{chooseUser.email}</h5>
+            <h5 className="font-size-14">{currentDialog.info.email}</h5>
           </div>
 
           <div className="mt-4">
             <p className="text-muted mb-1">Time</p>
-            <h5 className="font-size-14">{chooseUser.time}</h5>
+            <h5 className="font-size-14">{currentDialog.info.time}</h5>
           </div>
 
           <div className="mt-4">
             <p className="text-muted mb-1">Location</p>
-            <h5 className="font-size-14 mb-0">{chooseUser.location}</h5>
+            <h5 className="font-size-14 mb-0">{currentDialog.info.location}</h5>
           </div>
         </div>
       </div>

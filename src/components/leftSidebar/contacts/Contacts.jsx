@@ -19,7 +19,7 @@ const Contacts = () => {
 
       {
         Object.entries(myContacts).map(([key, value]) =>
-          <div className="mt-3">
+          <div key={key} className="mt-3">
             <div className="p-3 font-weight-bold text-primary">
               {key}
             </div>
@@ -27,9 +27,8 @@ const Contacts = () => {
             <ul className="list-unstyled contact-list">
               {
                 value.map(contact =>
-                  <li>
-                    <ContactPanel contact={contact} />
-                  </li>
+
+                    <ContactPanel key={contact.id} contact={contact} />
                 )
               }
             </ul>

@@ -1,13 +1,23 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {DialogContext} from "../../../context";
 
-const ChatItem = ({chat, active}) => {
+const ChatItem = ({chat}) => {
+
+  const {currentDialog, setCurrentDialog} = useContext(DialogContext)
+
+  const chooseChat = () => {
+    setCurrentDialog(chat)
+  }
+
+
   return (
     // className="unread"
     // className="active"
     // className="typing"
 
-    <li className={`${active ? "active" : ""} ${chat.typing ? "typing" : ""}`}>
-      <a href="#">
+    // <li className={`${active ? "active" : ""} ${chat.typing ? "typing" : ""}`}>
+    <li className={`${currentDialog.id === chat.id  && currentDialog.type === 'CHAT' ? "active" : ""} ${chat.typing ? "typing" : ""}`}>
+      <a href="#" onClick={chooseChat}>
         <div className="media">
 
           <div className="chat-user-img online align-self-center mr-3">
@@ -25,7 +35,7 @@ const ChatItem = ({chat, active}) => {
                 </div>
             }
 
-            {chat.online && <span className="user-status"/>}
+            {chat.isOnline && <span className="user-status"/>}
           </div>
 
           <div className="media-body overflow-hidden">

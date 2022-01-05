@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from "../../static/picture/logo.svg";
-import avatar from "../../static/picture/avatar-1.jpg";
 import {currentUser} from "../../data";
 
 const Menu = () => {
@@ -50,7 +49,18 @@ const Menu = () => {
           <li className="nav-item dropdown profile-user-dropdown d-inline-block d-lg-none">
             <a className="nav-link dropdown-toggle" href="" role="button" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false">
-              <img src={avatar} alt="" className="profile-user rounded-circle"/>
+
+              {
+                currentUser.avatar
+                  ?
+                  <img src={currentUser.avatar} alt="" className="profile-user rounded-circle"/>
+                  :
+                  <div className="avatar-xs rounded-circle profile-user">
+              <span className="avatar-title rounded-circle bg-soft-primary text-primary">
+                {currentUser.name[0].toUpperCase()}
+              </span>
+                  </div>
+              }
             </a>
             <div className="dropdown-menu">
               <a className="dropdown-item" href="#">Profile <i
@@ -80,7 +90,7 @@ const Menu = () => {
               {
                 currentUser.avatar
                   ?
-                  <img src={avatar} alt="" className="profile-user rounded-circle"/>
+                  <img src={currentUser.avatar} alt="" className="profile-user rounded-circle"/>
                   :
                   <div className="avatar-xs rounded-circle profile-user">
               <span className="avatar-title rounded-circle bg-soft-primary text-primary">
