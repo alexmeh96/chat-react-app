@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/react-chat-app/static/css/main.4ad1214b.css",
+    "main.js": "/react-chat-app/static/js/main.fd8394ee.js",
+    "static/media/materialdesignicons-webfont-5.0..eot": "/react-chat-app/static/media/materialdesignicons-webfont-5.0..21d6dd0b5b32336e7cff.eot",
+    "static/media/materialdesignicons-webfont-5.0..ttf": "/react-chat-app/static/media/materialdesignicons-webfont-5.0..f60b16c8d4cd35506d0b.ttf",
+    "static/media/materialdesignicons-webfont-5.0..woff": "/react-chat-app/static/media/materialdesignicons-webfont-5.0..bd5c85afa91031c7cdca.woff",
+    "static/media/remixicon-1580819880586.eot": "/react-chat-app/static/media/remixicon-1580819880586.ea0a4a94af1b5f50b1d0.eot",
+    "static/media/remixicon-1580819880586.ttf": "/react-chat-app/static/media/remixicon-1580819880586.99a59d50b72818687f2c.ttf",
+    "static/media/materialdesignicons-webfont-5.0..woff2": "/react-chat-app/static/media/materialdesignicons-webfont-5.0..eacc60984c4a668938dd.woff2",
+    "static/media/remixicon-1580819880586.woff": "/react-chat-app/static/media/remixicon-1580819880586.d305405d497921ad44fa.woff",
+    "static/media/remixicon-1580819880586.woff2": "/react-chat-app/static/media/remixicon-1580819880586.84901c6fa3ddba24ed16.woff2",
+    "static/media/ijwRs572Xtc6ZYQws9YVwnNGfJ4.woff2": "/react-chat-app/static/media/ijwRs572Xtc6ZYQws9YVwnNGfJ4.7ed85d05bee97d836955.woff2",
+    "static/media/ijwRs572Xtc6ZYQws9YVwnNIfJ7Cww.woff2": "/react-chat-app/static/media/ijwRs572Xtc6ZYQws9YVwnNIfJ7Cww.9a9799bf6fb177da6c1a.woff2",
+    "index.html": "/react-chat-app/index.html",
+    "static/media/logo.svg": "/react-chat-app/static/media/logo.e41f6087382055646c1c02d0a63583d5.svg",
+    "main.4ad1214b.css.map": "/react-chat-app/static/css/main.4ad1214b.css.map",
+    "main.fd8394ee.js.map": "/react-chat-app/static/js/main.fd8394ee.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4ad1214b.css",
+    "static/js/main.fd8394ee.js"
+  ]
+}
