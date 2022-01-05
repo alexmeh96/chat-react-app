@@ -15,34 +15,6 @@ function App() {
 
   const [currentDialog, setCurrentDialog] = useState({})
 
-  // $(document).ready(function () {
-  //   // $(".popup-img").magnificPopup({
-  //   //   type: "image",
-  //   //   closeOnContentClick: !0,
-  //   //   mainClass: "mfp-img-mobile",
-  //   //   image: {verticalFit: !0}
-  //   // });
-  //
-  //   $("#user-profile-hide").click(function () {
-  //
-  //     $(".user-profile-sidebar").hide()
-  //   });
-  //
-  {/*  $(".user-profile-show").click(function () {*/}
-
-  {/*    $(".user-profile-sidebar").show()*/}
-  {/*  });*/}
-
-  //   $(".chat-user-list li a").click(function () {
-  //     $(".user-chat").addClass("user-chat-show")
-  //   });
-  //
-  //   $(".user-chat-remove").click(function () {
-  //     console.log("user-chat-remove")
-  //     $(".user-chat").removeClass("user-chat-show")
-  //   });
-  // });
-
   $(document).ready(function () {
     // $(".popup-img").magnificPopup({
     //   type: "image",

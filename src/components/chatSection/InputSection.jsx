@@ -1,13 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const InputSection = () => {
+
+  const [newMessage, setNewMessage] = useState("")
+
+  const sendMessage = () => {
+    console.log(newMessage)
+    setNewMessage("")
+  }
+
+
   return (
     <div className="p-3 p-lg-4 border-top mb-0">
       <div className="row no-gutters">
         <div className="col">
           <div>
-            <input type="text" className="form-control form-control-lg bg-light border-light"
-                   placeholder="Enter Message..."/>
+            <input
+              value={newMessage}
+              onKeyPress={e => {
+                if (e.key === "Enter") {
+                  sendMessage()
+                }
+              }}
+              onChange={e => setNewMessage(e.target.value)}
+              type="text" className="form-control form-control-lg bg-light border-light"
+              placeholder="Enter Message..."/>
           </div>
         </div>
         <div className="col-auto">
@@ -29,6 +46,7 @@ const InputSection = () => {
               </li>
               <li className="list-inline-item">
                 <button type="submit"
+                        onClick={sendMessage}
                         className="btn btn-primary font-size-16 btn-lg chat-send waves-effect waves-light">
                   <i className="ri-send-plane-2-fill"/>
                 </button>

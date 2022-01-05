@@ -1,5 +1,4 @@
 import React from 'react';
-import avatar from "../../../static/picture/avatar-1.jpg";
 
 const UserItem = ({user}) => {
   return (
@@ -8,7 +7,7 @@ const UserItem = ({user}) => {
         <div className="avatar-xs mx-auto d-block chat-user-img online">
           {
             user.avatar
-              ? <img src={avatar} alt="user-img" className="img-fluid rounded-circle"/>
+              ? <img src={user.avatar} alt="user-img" className="img-fluid rounded-circle"/>
               : <span
                 className="avatar-title rounded-circle bg-soft-primary text-primary">
                 {user.name[0].toUpperCase()}
